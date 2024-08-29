@@ -2,14 +2,18 @@ import streamlit as st
 import pandas as pd
 import webbrowser as wb
 
+#Configura detalhes da página
+st.set_page_config(
+    page_title="Início",
+    page_icon="♻️",
+)
+
 DATA_URL = ('https://raw.githubusercontent.com/anicelysantos/codabr23-streamlit/main/pontos-coleta-recife.csv')
 
 dados = pd.read_csv(DATA_URL)
 
 #constroi um "cache" dos dados
 st.session_state["dados"] = dados
-
-
 
 st.title('Pontos de coleta em Recife')
 
